@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 sns.set(style="whitegrid")
 
 # Load Dataset
-file_path= "C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\IBM HR Analytics Employee Attrition & Performance_ ML _ FA _ DA projects\\WA_Fn-UseC_-HR-Employee-Attrition.csv"
+file_path= "C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\Unified-Mentor\\IBM HR Analytics Employee Attrition & Performance_ ML _ FA _ DA projects\\WA_Fn-UseC_-HR-Employee-Attrition.csv"
 df = pd.read_csv(file_path)
 
 # Basic Info

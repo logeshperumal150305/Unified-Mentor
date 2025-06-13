@@ -10,8 +10,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
 # Load the Dataset
-file_path= "C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\Customer Satisfaction Prediction  (  ML _ FA _ DA projects )\\customer_support_tickets.csv"
-df = pd.read_csv(file_path)  # Replace with actual path
+file_path= "C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\Unified-Mentor\\Customer Satisfaction Prediction  (  ML _ FA _ DA projects )\\customer_support_tickets.csv"
+df = pd.read_csv(file_path)  # actual path
 print(df.shape)
 print(df.columns)
 

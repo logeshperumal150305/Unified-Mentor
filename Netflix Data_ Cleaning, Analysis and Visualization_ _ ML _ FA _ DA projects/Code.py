@@ -10,7 +10,7 @@ sns.set(style="whitegrid")
 plt.rcParams["figure.figsize"] = (10, 6)
 
 # Load the Dataset
-file_path= "C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\Netflix Data_ Cleaning, Analysis and Visualization_ _ ML _ FA _ DA projects\\netflix1.csv"  # Replace with your actual file path
+file_path= "C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\Unified-Mentor\\Netflix Data_ Cleaning, Analysis and Visualization_ _ ML _ FA _ DA projects\\netflix1.csv"  # Replace with your actual file path
 df = pd.read_csv(file_path)  # Replace with your actual file path
 print(df.head())
 
