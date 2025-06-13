@@ -1,4 +1,4 @@
-# Step 1: Import Required Libraries
+# Import Required Libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,11 +12,11 @@ from sklearn.metrics import mean_squared_error, r2_score
 sns.set(style="whitegrid")
 plt.rcParams["figure.figsize"] = (10, 6)
 
-# Step 2: Load the Dataset
+# Load the Dataset
 df = pd.read_csv('C:\\Users\\loges\\OneDrive\\Documents\\VSCodes\\PYTHON\\Unified Mentor\\Unified-Mentor\\Supermart Grocery Sales - Retail Analytics Dataset_ (Data Analyst)\\Supermart Grocery Sales - Retail Analytics Dataset.csv')  # <- replace with your actual file path
 print(df.head())
 
-# Step 3: Data Cleaning
+# Data Cleaning
 df.drop_duplicates(inplace=True)
 
 # Convert 'Order Date' to datetime (coerce errors to NaT)
@@ -27,12 +27,12 @@ df['Order Year'] = df['Order Date'].dt.year
 # Drop rows with any NaN values (after date conversion)
 df.dropna(inplace=True)
 
-# Step 4: Label Encoding
+# Label Encoding
 le = LabelEncoder()
 for col in ['Category', 'Sub Category', 'City', 'Region', 'State']:
     df[col] = le.fit_transform(df[col].astype(str))
 
-# Step 5: EDA - Sales by Category
+# EDA - Sales by Category
 sns.boxplot(x='Category', y='Sales', data=df, palette='Set2')
 plt.title('Sales Distribution by Category')
 plt.show()
@@ -50,7 +50,7 @@ sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
 plt.show()
 
-# Step 6: Prepare Data for ML
+# Prepare Data for ML
 features = df.drop(columns=['Order ID', 'Customer Name', 'Order Date', 'Sales'])
 target = df['Sales']
 
@@ -64,19 +64,19 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# Step 7: Train Model
+# Train Model
 model = LinearRegression()
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-# Step 8: Evaluate Model
+# Evaluate Model
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
 
 print(f"Mean Squared Error: {mse:.2f}")
 print(f"R-squared Score: {r2:.2f}")
 
-# Step 9: Actual vs Predicted Plot
+# Actual vs Predicted Plot
 plt.scatter(y_test, y_pred, alpha=0.5)
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--')
 plt.title('Actual vs Predicted Sales')
